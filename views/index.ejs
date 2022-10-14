@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Barbell Calculator </h1>
+
+    <!-- 
+    Need
+    1. Form for weight input
+        1.a)Body Parser for input data then calcuate based on previous 
+    2. Body Parser to get avaliable plates
+    
+    -->
+
+    <div> <%= UserWeightInput %> </div>
+
+    <form action="/" method="post">
+        <input type="text" name="weightInput" id="weight-input" placeholder="Enter Weight">
+        <button type="submit" name="button">Load Bar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
