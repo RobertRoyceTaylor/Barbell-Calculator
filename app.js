@@ -19,12 +19,17 @@ let avaliablePlatesArr = [45,35,25,10,5,2.5] //Placeholder: Will be filled in us
 let requiredPlatesArr = [];
 
 //JavaScript Functions for Program
+let calculateAvaliablePlates = function(placeholderParam){
+    return 0;
+}
+
 let weightCalculation = function(weightInput,avaliablePlatesArr,userBarbell){
     resetBarbell();
-    weightInput = Math.round(weightInput / 5) * 5;
-    console.log(weightInput);
+
+    if(weightInput <= 45){
+        return requiredPlatesArr;
+    }
     weightInput = (weightInput - userBarbell) / 2;
-    console.log(weightInput);
     for(const plate of avaliablePlatesArr){
         if(plate <= weightInput){
             requiredPlatesArr.push(plate);
@@ -35,6 +40,15 @@ let weightCalculation = function(weightInput,avaliablePlatesArr,userBarbell){
     return requiredPlatesArr;
 }
 
+let sumRequiredPlates = function(array, userBarbell){
+    if(array.length === 0){
+        return userBarbell;
+    }
+    const initialValue = 0;
+    let sum = array.reduce((previousValue, currentValue) => previousValue + currentValue, initialValue);
+    return (sum * 2) + userBarbell;
+}
+
 let resetBarbell = function(){
     requiredPlatesArr = [];
     avaliablePlatesArr = [45,35,25,10,5,2.5] //Placeholder: Will be filled in using a function
@@ -42,18 +56,18 @@ let resetBarbell = function(){
 }
 
 
-
 app.get('/', function(req,res){
     res.render("index", {
-        UserWeightDisplay: userInput,
+        UserWeightDisplay: sumRequiredPlates(requiredPlatesArr, userBarbell),
         RequiredPlatesDisplay: requiredPlatesArr
     })
 });
 
-
 app.post('/', function(req, res){
-    userInput = req.body.weightInput;
-
+    userInput = Math.round(req.body.weightInput / 5) * 5;
+    if(userInput <= 45){
+        userInput = 45;
+    }
     weightCalculation(userInput, avaliablePlatesArr, userBarbell)
 
     res.redirect('/')
