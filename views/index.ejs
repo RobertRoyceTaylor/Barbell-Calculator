@@ -10,20 +10,48 @@
 <body>
     <h1> Barbell Calculator </h1>
 
-    <!-- 
-    Need
-    1. Form for weight input
-        1.a)Body Parser for input data then calcuate based on previous 
-    2. Body Parser to get avaliable plates
-    
-    -->
-    <div> Weight: <%= UserWeightDisplay %> </div>
-    <div> Plates: <%= RequiredPlatesDisplay %> </div>
+    <div class="plates-container">
+        <div class="btn plate-selector selector-outer" id="45-btn">
+          <div class="text-inner" id="plate-value-45">45</div>
+          <div class=" plate-selector selector-inner" id="inner-text-45">0</div>
+        </div>
+        <div class="btn plate-selector selector-outer" id="35-btn">
+          <div class="text-inner" id="plate-value-35">35</div>
+          <div class=" plate-selector selector-inner" id="inner-text-35">0</div>
+        </div>
+        <div class="btn plate-selector selector-outer" id="25-btn">
+          <div class="text-inner" id="plate-value-25">25</div>
+          <div class=" plate-selector selector-inner" id="inner-text-25">0</div>
+        </div>
+        <div class="btn plate-selector selector-outer" id="10-btn">
+          <div class="text-inner" id="plate-value-10">10</div>
+          <div class=" plate-selector selector-inner" id="inner-text-10">0</div>
+        </div>
+        <div class="btn plate-selector selector-outer" id="5-btn">
+          <div class="text-inner" id="plate-value-5">5</div>
+          <div class=" plate-selector selector-inner" id="inner-text-5">0</div>
+        </div>
+        <div class="btn plate-selector selector-outer" id="2-btn">
+          <div class="text-inner" id="plate-value-2">2.5</div>
+          <div class=" plate-selector selector-inner" id="inner-text-2">0</div>
+        </div>
+      </div>
+
+
+
 
     <form action="/" method="post">
         <input type="text" name="weightInput" id="weight-input" placeholder="Enter Weight">
-        <button type="submit" name="button">Load Bar</button>
+        <br>
+        <button type="submit" name="button" id="submit-button">Load Bar</button>
     </form>
+    <!-- Displays Plates -->
+    <div> Weight: <%= UserWeightDisplay %> </div>
+    <% for(var i=0; i<RequiredPlatesDisplay.length; i++) { %>
+        <div class="plateVisual">
+            <%= RequiredPlatesDisplay[i] %>
+        </div>
+    <% } %>
 
     <script src="script.js"></script>
 </body>
