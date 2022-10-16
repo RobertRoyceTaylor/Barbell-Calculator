@@ -16,38 +16,38 @@
       <div class="plates-container">
         <div class="btn plate-selector selector-outer" id="45-btn">
           <div class="text-inner" id="plate-value-45">45</div>
-          <input type="number" value="<%= Plate45Value %>" class=" plate-selector selector-inner" id="inner-text-45" name="numOf45Plate">
+          <input type="number" value="<%= Plate45Value %>" class=" plate-selector selector-inner" id="inner-text-45" name="numOf45Plate" readonly>
         </div>
         <div class="btn plate-selector selector-outer" id="35-btn">
           <div class="text-inner" id="plate-value-35">35</div>
-          <input type="number" value="<%= Plate35Value %>" class=" plate-selector selector-inner" id="inner-text-35" name="numOf35Plate">
+          <input type="number" value="<%= Plate35Value %>" class=" plate-selector selector-inner" id="inner-text-35" name="numOf35Plate" readonly>
         </div>
         <div class="btn plate-selector selector-outer" id="25-btn">
           <div class="text-inner" id="plate-value-25">25</div>
-          <input type="number" value="<%= Plate25Value %>" class=" plate-selector selector-inner" id="inner-text-25" name="numOf25Plate">
+          <input type="number" value="<%= Plate25Value %>" class=" plate-selector selector-inner" id="inner-text-25" name="numOf25Plate" readonly>
         </div>
         <div class="btn plate-selector selector-outer" id="10-btn">
           <div class="text-inner" id="plate-value-10">10</div>
-          <input type="number" value="<%= Plate10Value %>" class=" plate-selector selector-inner" id="inner-text-10" name="numOf10Plate">
+          <input type="number" value="<%= Plate10Value %>" class=" plate-selector selector-inner" id="inner-text-10" name="numOf10Plate" readonly>
         </div>
         <div class="btn plate-selector selector-outer" id="5-btn">
           <div class="text-inner" id="plate-value-5">5</div>
-          <input type="number" value="<%= Plate5Value %>" class=" plate-selector selector-inner" id="inner-text-5" name="numOf5Plate">
+          <input type="number" value="<%= Plate5Value %>" class=" plate-selector selector-inner" id="inner-text-5" name="numOf5Plate" readonly>
         </div>
         <div class="btn plate-selector selector-outer" id="2-btn">
           <div class="text-inner" id="plate-value-2">2.5</div>
-          <input type="number" value="<%= Plate2_5Value %>" class=" plate-selector selector-inner" id="inner-text-2" name="numOf2_5Plate">
+          <input type="number" value="<%= Plate2_5Value %>" class=" plate-selector selector-inner" id="inner-text-2" name="numOf2_5Plate" readonly>
         </div>
       </div>
 
 
-
+        
         <input type="text" name="weightInput" id="weight-input" placeholder="Enter Weight">
         <br>
         <button type="submit" name="button" id="submit-button">Load Bar</button>
     </form>
     <!-- Displays Plates -->
-    <div> Weight: <%= UserWeightDisplay %> </div>
+    <div id="total-weight"> Weight: <%= UserWeightDisplay %> </div>
     <% for(var i=0; i<RequiredPlatesDisplay.length; i++) { %>
         <div class="plateVisual">
             <%= RequiredPlatesDisplay[i] %>
